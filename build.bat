@@ -8,3 +8,4 @@ call ng build
 :: xcopy /y dist\app.blade.php ..\views\app.blade.php
 xcopy /y dist\*.js ..\..\public
 xcopy /y dist\*.css ..\..\public
+xcopy /s/y dist\assets\* ..\..\public\assets
