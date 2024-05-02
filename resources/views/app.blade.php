@@ -6,6 +6,8 @@
         <title>Househunter</title>
     </head>
     <body>
-        <div id="app"></div>
+        <app-root></app-root>
     </body>
+    <script src="{{ asset('polyfills.js') }}" type="module"></script>
+    <script src="{{ asset('main.js') }}" type="module"></script>
 </html>

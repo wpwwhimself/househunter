@@ -2,8 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build"
+        "dev": "cd resources/angular && ng serve --open",
+        "build": "build.bat"
     },
     "devDependencies": {
         "axios": "^1.6.4",
