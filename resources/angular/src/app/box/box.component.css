@@ -1,14 +1,3 @@
-.box {
-
-}
-
-.top-bar {
-  background-color: hsl(var(--acc));
-  display: block;
-  margin: 0;
-  padding: 0 1rem;
-}
-
 .contents {
   padding: 1em;
   border: 1px solid hsl(var(--gray));

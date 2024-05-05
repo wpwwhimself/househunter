@@ -50,8 +50,41 @@ body {
   }
 }
 
+.top-bar {
+  background-color: hsl(var(--gray));
+  display: block;
+  margin: 0;
+  padding: 0 1rem;
+
+  &:hover {
+    background-color: hsl(var(--acc));
+  }
+}
+
 /**************** headings ****************/
 
 h1, h2, h3, h4 {
   font-family: "Tektur", sans-serif;
+  font-weight: normal;
+}
+
+/**************** flexing ****************/
+
+.flex-right, .flex-down {
+  display: flex;
+  gap: 1em;
+
+  &.flex-right {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.flex-down {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.tight {
+    gap: 0.25em;
+  }
 }
