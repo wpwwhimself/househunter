@@ -28,6 +28,17 @@
             ],
             "scripts": []
           }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "angular:build"
+          },
+          "configurations": {
+            "local": {
+              "buildTarget": "angular:build:local"
+            }
+          }
         }
       }
     }

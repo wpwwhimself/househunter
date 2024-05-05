@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "cd resources/angular && ng serve --open",
+        "dev": "cd resources\\angular && ng serve --open",
         "build": "build.bat"
     },
     "devDependencies": {
