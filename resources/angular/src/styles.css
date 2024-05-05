@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Tektur:wght@400..900&display=swap');
+
+:root {
+  --acc-hue: 166;
+  --solids-sat: 3%;
+
+  --acc: var(--acc-hue), 87%, 49%;
+  --gray: var(--acc-hue), var(--solids-sat), 50%;
+  --fg: var(--acc-hue), var(--solids-sat), 95%;
+  --bg: var(--acc-hue), var(--solids-sat), 12%;
+}
+
+* {
+  font-family: "Overpass Mono", monospace;
+}
+
+body {
+  background-color: hsl(var(--bg));
+  color: hsl(var(--fg));
+  margin: 0;
+  min-height: 100vh;
+}
+
+/**************** colors ****************/
+
+.accent {
+  color: hsl(var(--acc));
+}
+
+.ghost {
+  opacity: 0.5;
+}
+
+.danger, .warning, .success, .info {
+  --color-parts: 90%, 60%;
+
+  &.danger {
+    color: hsl(0, var(--color-parts));
+  }
+  &.warning {
+    color: hsl(50, var(--color-parts));
+  }
+  &.success {
+    color: hsl(100, var(--color-parts));
+  }
+  &.info {
+    color: hsl(200, var(--color-parts));
+  }
+}
+
+/**************** headings ****************/
+
+h1, h2, h3, h4 {
+  font-family: "Tektur", sans-serif;
+}
