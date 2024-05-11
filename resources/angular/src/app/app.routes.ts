@@ -5,6 +5,7 @@ import { HomePageComponent } from 'pages/showcase/home-page/home-page.component'
 import { LoginComponent } from 'pages/showcase/login/login.component';
 import { MainComponent } from 'pages/dashboard/main/main.component';
 import { LocationsComponent } from 'pages/dashboard/locations/locations.component';
+import { RegisterComponent } from 'pages/showcase/register/register.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +14,7 @@ export const routes: Routes = [
     children: [
       { path: "", component: HomePageComponent },
       { path: "login", component: LoginComponent },
+      { path: "register", component: RegisterComponent },
     ]
   }, {
     path: "dashboard",

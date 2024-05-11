@@ -1,0 +1,28 @@
+<div class="flex-down center">
+  <app-logo />
+  <h1>Utwórz konto</h1>
+  <span>Załóż konto i poluj na swoje nowe cztery kąty</span>
+  <app-input
+    name="username"
+    label="Login"
+    />
+  <app-input
+    name="email"
+    label="Email"
+    />
+  <app-input
+    name="password"
+    label="Hasło"
+  />
+  <app-input
+    name="password_confirm"
+    label="Powtórz hasło"
+  />
+  <div class="flex-right">
+    <app-button label="Utwórz" />
+  </div>
+  <div class="flex-right">
+    <app-button label="Wróć do logowania" (click)="router.navigate(['login'])" />
+    <app-button label="Wróć" (click)="router.navigate(['/'])" />
+  </div>
+</div>

@@ -15,10 +15,6 @@ import { LogoComponent } from 'components/logo/logo.component';
 })
 export class HomePageComponent {
   constructor(
-    private router: Router,
+    public router: Router,
   ) {}
-
-  goToLogin() {
-    this.router.navigate(["login"])
-  }
 }

@@ -5,17 +5,17 @@ import { InputComponent } from 'components/input/input.component';
 import { LogoComponent } from 'components/logo/logo.component';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [
     LogoComponent,
     ButtonComponent,
     InputComponent,
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent {
+export class RegisterComponent {
   constructor(
     public router: Router,
   ) {}

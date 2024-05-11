@@ -1,5 +1,6 @@
 footer {
   align-items: baseline !important;
+  justify-content: space-between;
   position: fixed;
   bottom: var(--gap-size);
   left: var(--gap-size);

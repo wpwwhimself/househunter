@@ -9,6 +9,11 @@
     name="password"
     label="Hasło"
   />
-  <app-button label="Zaloguj" />
-  <app-button label="Wróć" (click)="goToHome()" />
+  <div class="flex-right">
+    <app-button label="Zaloguj" />
+  </div>
+  <div class="flex-right">
+    <app-button label="Utwórz konto" (click)="router.navigate(['register'])" />
+    <app-button label="Wróć" (click)="router.navigate(['/'])" />
+  </div>
 </div>
