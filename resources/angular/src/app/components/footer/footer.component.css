@@ -6,7 +6,3 @@ footer {
   left: var(--gap-size);
   right: var(--gap-size);
 }
-
-h3 {
-  margin: 0;
-}

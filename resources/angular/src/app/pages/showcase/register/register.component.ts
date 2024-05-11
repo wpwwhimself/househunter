@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BoxComponent } from 'components/box/box.component';
 import { ButtonComponent } from 'components/button/button.component';
 import { InputComponent } from 'components/input/input.component';
 import { LogoComponent } from 'components/logo/logo.component';
@@ -11,6 +12,7 @@ import { LogoComponent } from 'components/logo/logo.component';
     LogoComponent,
     ButtonComponent,
     InputComponent,
+    BoxComponent,
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'

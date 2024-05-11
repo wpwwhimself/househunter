@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logo',
@@ -8,5 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './logo.component.css'
 })
 export class LogoComponent {
+  constructor(
+    public router: Router,
+  ) {}
+
   @Input() size: number = 4
 }

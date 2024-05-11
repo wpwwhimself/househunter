@@ -1,7 +1,25 @@
-.main-wrapper {
-  padding: var(--gap-size);
-  min-height: 100vh;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+.main-wrapper, .backdrop {
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+
+  &.main-wrapper {
+    z-index: 1;
+    padding: var(--gap-size);
+    min-height: 100vh;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.backdrop {
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    z-index: 0;
+    background-image: url("/assets/h2color.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(10px);
+    opacity: 0.1;
+  }
 }

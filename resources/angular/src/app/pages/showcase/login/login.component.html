@@ -1,17 +1,25 @@
 <div class="flex-down center">
   <app-logo />
-  <h1>Zaloguj się</h1>
-  <app-input
-    name="username"
-    label="Login"
-    />
-  <app-input
-    name="password"
-    label="Hasło"
-  />
-  <div class="flex-right">
-    <app-button label="Zaloguj" />
-  </div>
+
+  <app-box title="Zaloguj się">
+    <div class="flex-down center">
+      <p>Przejdź do na swoje konto i zarządzaj znalezionymi ofertami</p>
+
+      <app-input
+        name="username"
+        label="Login"
+        />
+      <app-input
+        name="password"
+        label="Hasło"
+      />
+
+      <div class="flex-right">
+        <app-button label="Zaloguj" />
+      </div>
+    </div>
+  </app-box>
+
   <div class="flex-right">
     <app-button label="Utwórz konto" (click)="router.navigate(['register'])" />
     <app-button label="Wróć" (click)="router.navigate(['/'])" />

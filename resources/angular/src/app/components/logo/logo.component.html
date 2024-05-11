@@ -1,7 +1,7 @@
-<a href="/">
-  <img
-    src="/assets/h2color.svg"
-    alt="Househunter logo"
-    [style.height]="size + 'em'"
-  />
-</a>
+<img
+  src="/assets/h2color.svg"
+  alt="Househunter logo"
+  class="clickable"
+  [style.height]="size + 'em'"
+  (click)="this.router.navigate(['/'])"
+/>
