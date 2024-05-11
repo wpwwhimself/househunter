@@ -1,0 +1,11 @@
+footer {
+  align-items: baseline !important;
+  position: fixed;
+  bottom: var(--gap-size);
+  left: var(--gap-size);
+  right: var(--gap-size);
+}
+
+h3 {
+  margin: 0;
+}

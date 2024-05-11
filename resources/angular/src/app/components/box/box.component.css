@@ -1,5 +1,5 @@
 .contents {
-  padding: 1em;
+  padding: var(--gap-size);
   border: 1px solid hsl(var(--gray));
   margin-top: 2px;
 }

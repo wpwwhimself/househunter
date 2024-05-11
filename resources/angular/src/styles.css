@@ -10,10 +10,12 @@
   --gray: var(--acc-hue), var(--solids-sat), 50%;
   --fg: var(--acc-hue), var(--solids-sat), 95%;
   --bg: var(--acc-hue), var(--solids-sat), 12%;
+
+  --gap-size: 1em;
 }
 
 * {
-  font-family: "Overpass Mono", monospace;
+
 }
 
 body {
@@ -23,7 +25,22 @@ body {
   min-height: 100vh;
 }
 
+/**************** fonts ****************/
+
+* {
+  font-family: "Overpass Mono", monospace;
+}
+
+h1, h2, h3, h4, .button {
+  font-family: "Tektur", sans-serif;
+  font-weight: normal;
+}
+
 /**************** colors ****************/
+
+a {
+  color: inherit;
+}
 
 .accent {
   color: hsl(var(--acc));
@@ -61,30 +78,51 @@ body {
   }
 }
 
+/**************** interactives ****************/
+
+.clickable {
+  user-select: none;
+  cursor: pointer;
+}
+
+* {
+  transition-duration: 0.3s;
+}
+
+
 /**************** headings ****************/
 
 h1, h2, h3, h4 {
-  font-family: "Tektur", sans-serif;
-  font-weight: normal;
+  margin: 0;
 }
 
 /**************** flexing ****************/
 
 .flex-right, .flex-down {
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
 
   &.flex-right {
     flex-direction: row;
-    align-items: center;
   }
 
   &.flex-down {
     flex-direction: column;
-    justify-content: center;
   }
 
   &.tight {
     gap: 0.25em;
   }
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/**************** flexing ****************/
+
+main {
+  justify-content: center;
+  align-items: center;
 }

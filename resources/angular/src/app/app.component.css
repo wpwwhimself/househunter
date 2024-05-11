@@ -1,3 +1,7 @@
-main {
-  padding: 1em;
+.main-wrapper {
+  padding: var(--gap-size);
+  min-height: 100vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }

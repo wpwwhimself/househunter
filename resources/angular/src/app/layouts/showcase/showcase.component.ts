@@ -3,15 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from 'components/footer/footer.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-showcase',
   standalone: true,
   imports: [
     RouterOutlet,
-    FooterComponent,
+    FooterComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './showcase.component.html',
+  styleUrl: './showcase.component.css'
 })
-export class AppComponent {
-  title = 'angular';
+export class ShowcaseComponent {
+
 }
