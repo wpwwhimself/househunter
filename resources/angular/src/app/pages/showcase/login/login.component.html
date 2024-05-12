@@ -1,18 +1,23 @@
 <div class="flex-down center">
   <app-logo />
 
-  <app-box title="Zaloguj się">
+  <app-box heading="Zaloguj się">
     <div class="flex-down center">
       <p>Przejdź do na swoje konto i zarządzaj znalezionymi ofertami</p>
 
-      <app-input
-        name="username"
-        label="Login"
+      <form [formGroup]="loginForm" class="flex-down center">
+        <!-- formControlName="login" -->
+        <app-input
+          name="username"
+          label="Login"
         />
-      <app-input
-        name="password"
-        label="Hasło"
-      />
+        <!-- formControlName="password" -->
+        <app-input
+          type="password"
+          name="password"
+          label="Hasło"
+        />
+      </form>
 
       <div class="flex-right">
         <app-button label="Zaloguj" />

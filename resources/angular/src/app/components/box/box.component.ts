@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './box.component.css'
 })
 export class BoxComponent {
-  @Input() title?: string
+  @Input() heading?: string
 }

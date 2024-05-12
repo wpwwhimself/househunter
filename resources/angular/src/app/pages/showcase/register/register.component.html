@@ -1,7 +1,7 @@
 <div class="flex-down center">
   <app-logo />
 
-  <app-box title="Utwórz konto">
+  <app-box heading="Utwórz konto">
     <div class="flex-down center">
       <p>Załóż konto i poluj na swoje nowe cztery kąty</p>
 
@@ -10,15 +10,18 @@
         label="Login"
         />
       <app-input
+        type="email"
         name="email"
         label="Email"
         />
       <app-input
+        type="password"
         name="password"
         label="Hasło"
       />
       <app-input
-        name="password_confirm"
+        type="password"
+        name="confirm_password"
         label="Powtórz hasło"
       />
 

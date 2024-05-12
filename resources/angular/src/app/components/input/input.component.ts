@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -8,7 +9,19 @@ import { Component, Input } from '@angular/core';
   styleUrl: './input.component.css'
 })
 export class InputComponent {
+  @Input() type?: string = "text"
   @Input() name!: string
   @Input() label!: string
-  @Input() value?: string
+
+  @Output() valueChange = new EventEmitter<string>()
+
+  formControl: FormControl = new FormControl("")
+
+  get value(): string {
+    return this.formControl.value
+  }
+  set value(value: string) {
+    this.formControl.setValue(value)
+    this.valueChange.emit(value)
+  }
 }

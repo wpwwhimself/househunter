@@ -1,9 +1,8 @@
 <div class="input-container flex-right">
-  <label for="{{ name }}">{{ label }}</label>
+  <label [for]="name">{{ label }}</label>
+  <!-- [formControl]="formControl" -->
   <input
-    type="text"
-    id="{{ name }}"
-    name="{{ name }}"
-    value="{{ value }}"
+    [type]="type"
+    [id]="name"
   >
 </div>
