@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::controller(AuthController::class)->prefix("auth")->group(function () {
+        foreach ([
+            "login",
+            "register",
+            "reset-password",
+        ] as $endpoint) {
+            Route::withoutMiddleware("auth:sanctum")->post($endpoint, Str::camel($endpoint));
+        }
+
+        Route::get('user', fn (Request $request) => $request->user());
+        Route::post("logout", "logout");
+    });
 });
