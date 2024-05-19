@@ -1,27 +1,46 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true,
+    },
+  ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.css'
 })
-export class InputComponent {
-  @Input() type?: string = "text"
+export class InputComponent implements ControlValueAccessor {
+  @Input() label: string = ""
   @Input() name!: string
-  @Input() label!: string
+  @Input() type: string = "text"
 
-  @Output() valueChange = new EventEmitter<string>()
+  value: string = ""
+  onChange: (val: string) => void = () => {}
+  onTouched: () => void = () => {}
 
-  formControl: FormControl = new FormControl("")
-
-  get value(): string {
-    return this.formControl.value
+  writeValue(obj: string): void {
+    this.value = obj
   }
-  set value(value: string) {
-    this.formControl.setValue(value)
-    this.valueChange.emit(value)
+  registerOnChange(fn: (val: string) => void): void {
+    this.onChange = fn
+  }
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+
+  }
+
+  handleInputChange(event: Event): void {
+    const target = event.target as HTMLInputElement
+    this.value = target.value
+    this.onChange(this.value)
+    this.onTouched()
   }
 }

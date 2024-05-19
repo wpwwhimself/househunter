@@ -5,17 +5,20 @@
     <div class="flex-down center">
       <p>Przejdź do na swoje konto i zarządzaj znalezionymi ofertami</p>
 
-      <form [formGroup]="loginForm" class="flex-down center">
-        <!-- formControlName="login" -->
+      <form
+        class="flex-down center"
+        [formGroup]="loginForm"
+      >
         <app-input
           name="username"
           label="Login"
+          formControlName="login"
         />
-        <!-- formControlName="password" -->
         <app-input
           type="password"
           name="password"
           label="Hasło"
+          formControlName="password"
         />
       </form>
 

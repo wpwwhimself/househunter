@@ -28,4 +28,8 @@ export class LoginComponent {
     login: new FormControl(""),
     password: new FormControl(""),
   })
+
+  onSubmit(): void {
+    console.log(this.loginForm.value)
+  }
 }

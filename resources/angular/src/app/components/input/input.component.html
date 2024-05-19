@@ -1,8 +1,8 @@
 <div class="input-container flex-right">
   <label [for]="name">{{ label }}</label>
-  <!-- [formControl]="formControl" -->
   <input
     [type]="type"
-    [id]="name"
+    [value]="value"
+    (input)="handleInputChange($event)"
   >
 </div>
