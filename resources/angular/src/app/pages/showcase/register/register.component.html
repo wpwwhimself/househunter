@@ -5,29 +5,40 @@
     <div class="flex-down center">
       <p>Załóż konto i poluj na swoje nowe cztery kąty</p>
 
-      <app-input
-        name="username"
-        label="Login"
+      <form
+        class="flex-down center"
+        [formGroup]="registerForm"
+      >
+        <app-input
+          name="username"
+          label="Login"
+          formControlName="login"
+          />
+        <app-input
+          type="email"
+          name="email"
+          label="Email"
+          formControlName="email"
+          />
+        <app-input
+          type="password"
+          name="password"
+          label="Hasło"
+          formControlName="password"
         />
-      <app-input
-        type="email"
-        name="email"
-        label="Email"
+        <app-input
+          type="password"
+          name="confirm_password"
+          label="Powtórz hasło"
+          formControlName="repeat_password"
         />
-      <app-input
-        type="password"
-        name="password"
-        label="Hasło"
-      />
-      <app-input
-        type="password"
-        name="confirm_password"
-        label="Powtórz hasło"
-      />
 
-      <div class="flex-right">
-        <app-button label="Utwórz" />
-      </div>
+        <div class="flex-right">
+          <app-button label="Utwórz" (click)="onSubmit()" />
+        </div>
+
+        <span class="danger">{{ errors }}</span>
+      </form>
     </div>
   </app-box>
 
