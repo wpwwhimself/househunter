@@ -6,7 +6,6 @@ import { BoxComponent } from 'components/box/box.component';
 import { ButtonComponent } from 'components/button/button.component';
 import { InputComponent } from 'components/input/input.component';
 import { LogoComponent } from 'components/logo/logo.component';
-import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -44,6 +43,6 @@ export class RegisterComponent {
     }
 
     this.http.post('/api/auth/register', this.registerForm.value)
-      // .pipe()
+      .pipe()
   }
 }
