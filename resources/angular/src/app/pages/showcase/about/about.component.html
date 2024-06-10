@@ -1,0 +1,27 @@
+<div class="flex-down center">
+  <ul>
+    <li>Jesteś w trakcie szukania pokoju, mieszkania albo domu?</li>
+    <li>Masz do rozważenia wiele opcji i nie wiesz, jak je wszystkie ogarnąć?</li>
+  </ul>
+  <p>
+    <b class="accent heading-font">Househunter</b> jest zaprojektowany z myślą o Twoich problemach!
+  </p>
+
+  <app-logo [size]="5" />
+
+  <app-box heading="Czym jest Househunter?">
+    <p>Dzięki tej aplikacji możesz:</p>
+    <ul>
+      <li>zebrać w jedno miejsce wszystkie interesujące cię oferty</li>
+      <li>scharakteryzować je pod kątem własnoręcznie nadanych kategorii</li>
+      <li>zobaczyć podgląd ich lokalizacji na mapie i porównać odległości między nimi</li>
+    </ul>
+  </app-box>
+
+  <p><b class="accent heading-font">Househunter</b> to idealny partner do Twojego polowania na własne cztery kąty.</p>
+
+  <div class="flex-right center">
+    <!-- <app-button label="O aplikacji" (click)="router.navigate(['about'])" /> -->
+    <app-button label="Rozpocznij" (click)="router.navigate(['login'])" />
+  </div>
+</div>

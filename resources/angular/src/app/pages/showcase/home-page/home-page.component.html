@@ -2,5 +2,8 @@
   <app-logo [size]="20" />
   <h1>Househunter</h1>
   <span>Upoluj swój dom prościej!</span>
-  <app-button label="Zaloguj się" (click)="router.navigate(['login'])" />
+  <div class="flex-right center">
+    <app-button label="O aplikacji" (click)="router.navigate(['about'])" />
+    <app-button label="Zaloguj się" (click)="router.navigate(['login'])" />
+  </div>
 </div>

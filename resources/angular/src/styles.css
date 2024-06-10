@@ -31,7 +31,7 @@ body {
   font-family: "Overpass Mono", monospace;
 }
 
-h1, h2, h3, h4, .button {
+h1, h2, h3, h4, .button, .heading-font {
   font-family: "Tektur", sans-serif;
   font-weight: normal;
 }
