@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -15,33 +16,38 @@ class AuthController extends Controller
         $data = $rq->validate([
             "login" => "required|string",
             "password" => "required|min:8",
+        ], $messages = [
+            "login.required" => "Login jest wymagany",
+            "password.required" => "Hasło jest wymagane",
+            "password.min" => "Hasło musi mieć co najmniej 8 znaków",
         ]);
 
-        $user = User::where("name", $data["login"])->first();
-        if (!$user || !Hash::check($data["password"], $user->password)) {
-            return response()->json([
-                "message" => "Niepoprawne dane logowania",
-            ], 401);
+        if (Auth::attempt([
+            "name" => $data["login"],
+            "password" => $data["password"]
+        ])) {
+            $rq->session()->regenerate();
+            return response()->json(["message" => "Zalogowano"]);
         }
 
-        $token = $user->createToken($user->name . "-AuthToken")->plainTextToken;
-        return response()->json([
-            "access_token" => $token,
-        ]);
+        return response()->json(["message" => "Niepoprawny login lub hasło"], 401);
     }
 
     public function logout(Request $rq) {
-        $rq->user()->currentAccessToken()->delete();
+        Auth::logout();
+        $rq->session()->invalidate();
+        $rq->session()->regenerateToken();
         return response()->json(["message" => "Wylogowano"]);
     }
 
     public function register(Request $rq) {
         $data = $rq->validate([
-            "login" => "required|string",
+            "login" => "required|string|unique:users,name",
             "email" => "required|string|email|unique:users",
             "password" => "required|min:8|confirmed",
         ], $messages = [
             "login.required" => "Login jest wymagany",
+            "login.unique" => "Podany login jest już zajęty",
             "email.required" => "Email jest wymagany",
             "email.email" => "Email musi być poprawny",
             "email.unique" => "Podany email jest już zajęty",

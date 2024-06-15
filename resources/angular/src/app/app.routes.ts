@@ -7,6 +7,7 @@ import { MainComponent } from 'pages/dashboard/main/main.component';
 import { LocationsComponent } from 'pages/dashboard/locations/locations.component';
 import { RegisterComponent } from 'pages/showcase/register/register.component';
 import { AboutComponent } from 'pages/showcase/about/about.component';
+import { authGuard } from 'auth.guard';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,7 @@ export const routes: Routes = [
   }, {
     path: "dashboard",
     component: DashboardComponent,
+    canActivate: [authGuard],
     children: [
       { path: "", component: MainComponent },
       { path: "locations", component: LocationsComponent },

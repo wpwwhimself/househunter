@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::withoutMiddleware("auth:sanctum")->post($endpoint, Str::camel($endpoint));
         }
 
-        Route::get('user', fn (Request $request) => $request->user());
+        Route::get('user', fn (Request $rq) => $rq->user());
         Route::post("logout", "logout");
     });
 });

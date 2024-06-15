@@ -20,11 +20,13 @@
           label="Hasło"
           formControlName="password"
         />
-      </form>
 
-      <div class="flex-right">
-        <app-button label="Zaloguj" />
-      </div>
+        <div class="flex-right">
+          <app-button label="Zaloguj" (click)="onSubmit()" />
+        </div>
+
+        <span class="danger">{{ errors }}</span>
+      </form>
     </div>
   </app-box>
 

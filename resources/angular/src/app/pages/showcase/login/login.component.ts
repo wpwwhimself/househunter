@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,6 +23,7 @@ import { LogoComponent } from 'components/logo/logo.component';
 export class LoginComponent {
   constructor(
     public router: Router,
+    private http: HttpClient,
   ) {}
 
   loginForm = new FormGroup({
@@ -29,7 +31,14 @@ export class LoginComponent {
     password: new FormControl(""),
   })
 
+  errors: string = ""
+
   onSubmit(): void {
-    console.log(this.loginForm.value)
+    this.http
+      .post("/api/auth/login", this.loginForm.value)
+      .subscribe(
+        val => { this.router.navigate(['dashboard']) },
+        err => { this.errors = err.error.message }
+      )
   }
 }
