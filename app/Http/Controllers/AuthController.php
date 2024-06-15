@@ -39,7 +39,14 @@ class AuthController extends Controller
         $data = $rq->validate([
             "login" => "required|string",
             "email" => "required|string|email|unique:users",
-            "password" => "required|min:8",
+            "password" => "required|min:8|confirmed",
+        ], $messages = [
+            "login.required" => "Login jest wymagany",
+            "email.required" => "Email jest wymagany",
+            "email.email" => "Email musi być poprawny",
+            "email.unique" => "Podany email jest już zajęty",
+            "password.min" => "Hasło musi mieć co najmniej 8 znaków",
+            "password.confirmed" => "Hasła nie zgadzają się",
         ]);
 
         $user = User::create([
@@ -50,6 +57,7 @@ class AuthController extends Controller
 
         return response()->json([
             "message" => "Konto utworzone",
+            "user" => $user,
         ]);
     }
 

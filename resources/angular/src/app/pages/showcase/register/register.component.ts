@@ -30,19 +30,18 @@ export class RegisterComponent {
     login: new FormControl(""),
     email: new FormControl(""),
     password: new FormControl(""),
-    repeat_password: new FormControl(""),
+    password_confirmation: new FormControl(""),
   })
 
   errors: string = ""
+  success = false;
 
   onSubmit(): void {
-    // check repeat password
-    if (this.registerForm.value.password !== this.registerForm.value.repeat_password) {
-      this.errors = "Hasła nie pasują"
-      return
-    }
-
-    this.http.post('/api/auth/register', this.registerForm.value)
-      .pipe()
+    this.http
+      .post('/api/auth/register', this.registerForm.value)
+      .subscribe(
+        val => { this.success = true },
+        err => { this.errors = err.error.message }
+      )
   }
 }

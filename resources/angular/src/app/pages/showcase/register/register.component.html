@@ -2,6 +2,7 @@
   <app-logo />
 
   <app-box heading="Utwórz konto">
+    @if (!success) {
     <div class="flex-down center">
       <p>Załóż konto i poluj na swoje nowe cztery kąty</p>
 
@@ -28,9 +29,9 @@
         />
         <app-input
           type="password"
-          name="confirm_password"
+          name="password_confirmation"
           label="Powtórz hasło"
-          formControlName="repeat_password"
+          formControlName="password_confirmation"
         />
 
         <div class="flex-right">
@@ -40,6 +41,11 @@
         <span class="danger">{{ errors }}</span>
       </form>
     </div>
+    } @else {
+    <div class="success">
+      Konto zostało utworzone. Przejdź do logowania.
+    </div>
+    }
   </app-box>
 
   <div class="flex-right">
