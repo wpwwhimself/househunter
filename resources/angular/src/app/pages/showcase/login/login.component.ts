@@ -34,6 +34,8 @@ export class LoginComponent {
   errors: string = ""
 
   onSubmit(): void {
+    this.http.get("/sanctum/csrf-cookie")
+
     this.http
       .post("/api/auth/login", this.loginForm.value)
       .subscribe(

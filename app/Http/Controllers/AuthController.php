@@ -34,7 +34,6 @@ class AuthController extends Controller
     }
 
     public function logout(Request $rq) {
-        Auth::logout();
         $rq->session()->invalidate();
         $rq->session()->regenerateToken();
         return response()->json(["message" => "Wylogowano"]);

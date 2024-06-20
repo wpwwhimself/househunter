@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation } from 'animations';
 import { FooterComponent } from 'components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  animations: [slideInAnimation]
+  animations: [slideInAnimation],
 })
 export class AppComponent {
   heading = 'angular';
